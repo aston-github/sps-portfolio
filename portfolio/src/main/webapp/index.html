@@ -1,19 +1,56 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <title>My Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
-  </head>
-  <body>
-    <div id="content">
-      <h1>My Portfolio</h1>
-      <p>This is my portfolio.</p>
-      <p>Click <a href="/hello">here</a> to see content created by server code.</p>
-      <p>Click here to get a random message:</p>
-      <button onclick="addRandomGreeting()">Hello</button>
-      <div id="greeting-container"></div>
-    </div>
-  </body>
+    <head>
+        <meta charset="UTF-8">
+        <title>My Portfolio</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="script.js"></script>
+    </head>
+    <body>
+        <div id="content">
+            <h1>Aston Yong's Portfolio</h1>
+            <p>I'm a sophomore at Duke Univeristy
+                studying computer science and economics. 
+                I'm from Los Angeles and enjoy cycling,
+                running, and trying unique foods. My other interests
+                include foreign policy and architecture. On campus, I am 
+                involved in Club Running, Club Cycling, and Soceity of Hispanic Professional Engineers.
+            </p>
+            <img src="images/AB05CC53-C494-4E9D-A08B-2B3A0BD13011.jpeg">
+            <p>Click here to get a random fact about me!</p>
+            <button onclick="addRandomGreeting()">Facts</button>
+            <div id="greeting-container"></div>
+            <br>
+            <h3> View my: </h3>
+            <button onclick="window.location.href='https://www.linkedin.com/in/aston-yong';">
+            LinkedIn
+            </button>
+            <button onclick="window.location.href='https://github.com/aston-github';">
+            GitHub
+            </button>
+            <h3>Experiences</h3>
+            <h4>Bass Connections: Early Earthquake Warning System</h4>
+            <p>This Duke Bass Connections project is developing an early eathquake warning system to
+                be deployed in Nepal using microcontrollers, Internet of Things platforms, and 
+                trained detection algorithms. Aspects of technology, hazard analysis, and 
+                policy intersect to create this interdisciplinary team.
+            </p>
+            <a href="https://bassconnections.duke.edu/project-teams/earthquake-early-warning-nepal-technology-behavioral-science-and-policy-2020-2021">Project Site</a>
+            <h4>Data+ : Tracking Building Congestion Using WiFi Data</h4>
+            <p>In light of Duke’s reopening amidst the COVID-19 pandemic, this project aims to track
+                the movement of foot traffic in and around Bryan Center by analyzing Wifi log data 
+                from all users connected to wireless networks in the center during February 2020. Our team 
+                employed Markov Chains, Kernel Density Estimations, and data analysis and visualization 
+                tools such as Python and Tableau to create a map of Wifi access points in Bryan Center and
+                a heatmap that visualizes congestion. 
+            </p>
+            <a href="https://bigdata.duke.edu/sites/bigdata.duke.edu/files/site-images/Team%208%20Poster.pdf">Poster</a>
+            <h3>Gallery</h3>
+            <img src="images/6CBA078B-96AA-4452-B431-0BDE2D1E4F83.jpeg">
+            <img src="images/2F9F5E48-C52C-451A-A1BD-B87C54A95FC6.jpeg">
+            <img src="images/A676270B-A280-4595-9419-61083240A7F4_1_201_a.jpeg">
+            <img src="images/368CA4B6-BD31-4D76-826A-A1EFAF6A5939.jpeg">
+            <p>Click <a href="/hello">here</a> to see content created by server code.</p>
+        </div>
+    </body>
 </html>
