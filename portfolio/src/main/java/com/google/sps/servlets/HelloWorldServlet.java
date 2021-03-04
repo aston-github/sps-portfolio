@@ -30,7 +30,7 @@ public class HelloWorldServlet extends HttpServlet {
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
     response.setContentType("text/html;");
-    response.getWriter().println("<h1>Hello world!</h1>");
-    response.getWriter().println("<img src= 'https://media4.giphy.com/media/3ohhwgrL4KKPIZoTQY/giphy.gif'>");
+    response.getWriter().println("Fetch hello world!");
+    // response.getWriter().println("<img src= 'https://media4.giphy.com/media/3ohhwgrL4KKPIZoTQY/giphy.gif'>");
   }
 }
