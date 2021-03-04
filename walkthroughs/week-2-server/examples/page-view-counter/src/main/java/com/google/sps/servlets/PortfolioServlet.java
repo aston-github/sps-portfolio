@@ -21,8 +21,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /** Servlet that returns HTML that contains the page view count. */
-@WebServlet("/hello")
-public class HelloWorldServlet extends HttpServlet {
+@WebServlet("/hello-world")
+public class PortfolioServlet extends HttpServlet {
 
   private int pageViews = 0;
 
@@ -30,7 +30,7 @@ public class HelloWorldServlet extends HttpServlet {
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
     response.setContentType("text/html;");
-    response.getWriter().println("Fetch hello world!");
-    // response.getWriter().println("<img src= 'https://media4.giphy.com/media/3ohhwgrL4KKPIZoTQY/giphy.gif'>");
+    response.getWriter().println("<h1>Hello world!</h1>");
+    response.getWriter().println("<img src= 'https://media4.giphy.com/media/3ohhwgrL4KKPIZoTQY/giphy.gif'>");
   }
 }
