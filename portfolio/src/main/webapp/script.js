@@ -14,14 +14,14 @@
 
 
 /**
- * Adds a random greeting to the page.
+ * Adds a random fact to the page.
  */
 function addRandomFact() {
     const facts = ["I love museums", "I'm trilingual", 'I have a spot of gray hair', 'I am a triathlete',
         "I hate zucchini", "I can barely whistle", "I love avocados"
     ];
 
-    // Pick a random greeting.
+    // Pick a random fact.
     const fact = facts[Math.floor(Math.random() * facts.length)];
 
     // Add it to the page.
@@ -29,23 +29,21 @@ function addRandomFact() {
     factContainer.innerText = fact;
 }
 
-/** Fetches the current date from the server and adds it to the page. */
+/** Fetches the favorites date from the server and adds it to the page. */
 async function showFav() {
-  const responseFromServer = await fetch('/hello');
-  const favs = await responseFromServer.json();
-//   const textFromResponse = await responseFromServer.text();
-  const favElement = document.getElementById('fav-container');
-  favElement.innerHTML = '';
-  const i = Math.floor(Math.random() * 9);
-  favElement.appendChild(
-      createParElement(favs[i]));  
+    const responseFromServer = await fetch('/hello');
+    const favs = await responseFromServer.json();
+    const favElement = document.getElementById('fav-container');
+    favElement.innerHTML = '';
+    const i = Math.floor(Math.random() * 9);
+    favElement.appendChild(
+        createParElement(favs[i]));
 
 }
 
-/** Creates an <li> element containing text. */
+/** Creates an <p> element containing text. */
 function createParElement(text) {
-  const pElement = document.createElement('p');
-  pElement.innerText = text;
-  return pElement;
+    const pElement = document.createElement('p');
+    pElement.innerText = text;
+    return pElement;
 }
-
