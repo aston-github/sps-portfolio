@@ -14,23 +14,42 @@
 
 package com.google.sps.servlets;
 
+import com.google.gson.Gson;
 import java.io.IOException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.ArrayList;
 
 /** Servlet that returns HTML that contains the page view count. */
 @WebServlet("/hello")
-public class HelloWorldServlet extends HttpServlet {
+public class FavoriteServlet extends HttpServlet {
 
-  private int pageViews = 0;
 
   @Override
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
-    response.setContentType("text/html;");
-    response.getWriter().println("Fetch hello world!");
-    // response.getWriter().println("<img src= 'https://media4.giphy.com/media/3ohhwgrL4KKPIZoTQY/giphy.gif'>");
+    ArrayList<String> favs = new ArrayList<String>();
+    favs.add("Sport: Triathlon");
+    favs.add("Movie: Interstellar");
+    favs.add("Superhero: Captain America");
+    favs.add("Singer: Taylor Swift");
+    favs.add("Food: Korean BBQ");
+    favs.add("National Park: Zion");
+    favs.add("Drink: Tea");
+    favs.add("Color: Green");
+    favs.add("Cartoon: Avatar the Last Airbender");
+    String json = convertToJsonUsingGson(favs);
+
+    // Send the JSON as the response
+    response.setContentType("application/json;");
+    response.getWriter().println(json);
+  }
+
+  private String convertToJsonUsingGson(ArrayList<String> favs) {
+    Gson gson = new Gson();
+    String json = gson.toJson(favs);
+    return json;
   }
 }
