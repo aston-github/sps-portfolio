@@ -35,7 +35,7 @@ async function showFav() {
     const favs = await responseFromServer.json();
     const favElement = document.getElementById('fav-container');
     favElement.innerHTML = '';
-    const i = Math.floor(Math.random() * 9);
+    const i = Math.floor(Math.random() * favs.length);
     favElement.appendChild(
         createParElement(favs[i]));
 
