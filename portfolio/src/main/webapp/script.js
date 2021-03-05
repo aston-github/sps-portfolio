@@ -12,28 +12,38 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+
 /**
- * Adds a random greeting to the page.
+ * Adds a random fact to the page.
  */
-function addRandomGreeting() {
-    const greetings = ["Favorite color: green", "I'm trilingual", 'I have a spot of gray hair', 'I am a triathlete',
-        "I hate zucchini", "Favorite movie: Interstellar"
+function addRandomFact() {
+    const facts = ["I love museums", "I'm trilingual", 'I have a spot of gray hair', 'I am a triathlete',
+        "I hate zucchini", "I can barely whistle", "I love avocados"
     ];
 
-    // Pick a random greeting.
-    const greeting = greetings[Math.floor(Math.random() * greetings.length)];
+    // Pick a random fact.
+    const fact = facts[Math.floor(Math.random() * facts.length)];
 
     // Add it to the page.
-    const greetingContainer = document.getElementById('greeting-container');
-    greetingContainer.innerText = greeting;
+    const factContainer = document.getElementById('fact-container');
+    factContainer.innerText = fact;
 }
 
-/** Fetches the current date from the server and adds it to the page. */
-async function showHello() {
-  const responseFromServer = await fetch('/hello');
-  const textFromResponse = await responseFromServer.text();
+/** Fetches the favorites date from the server and adds it to the page. */
+async function showFav() {
+    const responseFromServer = await fetch('/hello');
+    const favs = await responseFromServer.json();
+    const favElement = document.getElementById('fav-container');
+    favElement.innerHTML = '';
+    const i = Math.floor(Math.random() * favs.length);
+    favElement.appendChild(
+        createParElement(favs[i]));
 
-  const helloContainer = document.getElementById('hello-container');
-  helloContainer.innerText = textFromResponse;
 }
 
+/** Creates an <p> element containing text. */
+function createParElement(text) {
+    const pElement = document.createElement('p');
+    pElement.innerText = text;
+    return pElement;
+}
