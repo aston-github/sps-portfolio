@@ -1,6 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400&display=swap');
+
 body {
 	background-color: BlanchedAlmond;
-	font-family: Arial;
+	font-family: 'Quicksand', sans-serif;
 }
 
 #content {
@@ -15,8 +17,8 @@ body {
 
 img {
 	display: block;
-	max-width: 40%;
-	max-height: 30%;
+	max-width: 50%;
+	max-height: 50%;
 	margin-left: auto;
 	margin-right: auto;
 	padding: 2px;

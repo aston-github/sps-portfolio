@@ -61,6 +61,17 @@
             <img src="images/2F9F5E48-C52C-451A-A1BD-B87C54A95FC6.jpeg">
             <img src="images/A676270B-A280-4595-9419-61083240A7F4_1_201_a.jpeg">
             <img src="images/368CA4B6-BD31-4D76-826A-A1EFAF6A5939.jpeg">
+
+            <form action="/upload" method="POST" enctype="multipart/form-data">
+                <p>Type some text:</p>
+                <textarea name="message"></textarea>
+                <br/>
+                <p>Upload an image:</p>
+                <input type="file" name="image">
+                <br/><br/>
+                <button>Submit</button>
+            </form> 
+            <p><a href="/list-images">Click here to see all of the uploaded images!</a></p>           
             <p>Click <a href="/hello">here</a> to see content created by server code.</p>
         </div>
     </body>
